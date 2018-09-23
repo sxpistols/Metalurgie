@@ -243,6 +243,7 @@
 				TargetAttributes = {
 					69415FB0214EDF8800159570 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -477,7 +478,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "472a6a54-9e80-41da-8528-fb4ae5c2715f";
 				PROVISIONING_PROFILE_SPECIFIER = MetalurgieDev;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -499,7 +500,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6fab8a67-70ab-487b-a090-00ce4974c5fd";
 				PROVISIONING_PROFILE_SPECIFIER = metalurgieAppDist;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

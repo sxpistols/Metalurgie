@@ -65,8 +65,8 @@ open class CollectionViewSource: NSObject {
     public func register(itemsFor collectionView: UICollectionView) {
         
         for section in self.sections {
-            section.header?.cell.register(itemFor: collectionView, kind: UICollectionElementKindSectionHeader)
-            section.footer?.cell.register(itemFor: collectionView, kind: UICollectionElementKindSectionFooter)
+            section.header?.cell.register(itemFor: collectionView, kind: UICollectionView.elementKindSectionHeader)
+            section.footer?.cell.register(itemFor: collectionView, kind: UICollectionView.elementKindSectionFooter)
             
             for cell in section.items.map({ $0.cell }) {
                 cell.register(itemFor: collectionView)
@@ -110,13 +110,13 @@ extension CollectionViewSource: UICollectionViewDataSource {
         let grid = self.grid(indexPath.section)
         let section = self.itemAt(indexPath.section)
         
-        if kind == UICollectionElementKindSectionHeader {
+        if kind == UICollectionView.elementKindSectionHeader {
             guard
                 let section = section,
                 let data = section.header,
                 let cell = data.cell.reuse(collectionView,
                                            indexPath: indexPath,
-                                           kind: UICollectionElementKindSectionHeader) as? CollectionViewCell
+                                           kind: UICollectionView.elementKindSectionHeader) as? CollectionViewCell
             else {
                 return CollectionViewCell.reuse(collectionView, indexPath: indexPath)
             }
@@ -124,13 +124,13 @@ extension CollectionViewSource: UICollectionViewDataSource {
             return cell
         }
         
-        if kind == UICollectionElementKindSectionFooter {
+        if kind == UICollectionView.elementKindSectionFooter {
             guard
                 let section = section,
                 let data = section.footer,
                 let cell = data.cell.reuse(collectionView,
                                            indexPath: indexPath,
-                                           kind: UICollectionElementKindSectionFooter) as? CollectionViewCell
+                                           kind: UICollectionView.elementKindSectionFooter) as? CollectionViewCell
             else {
                 return CollectionViewCell.reuse(collectionView, indexPath: indexPath)
             }
@@ -140,7 +140,7 @@ extension CollectionViewSource: UICollectionViewDataSource {
 
         return CollectionViewCell.reuse(collectionView,
                                         indexPath: indexPath,
-                                        kind: UICollectionElementKindSectionHeader)
+                                        kind: UICollectionView.elementKindSectionHeader)
     }
     
     public func collectionView(_ collectionView: UICollectionView,
